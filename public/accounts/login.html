@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Samuel Sharp</title>
+  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+  <link rel="stylesheet" href="acct.css">
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyDq5qWALcDQHYpXf3xc4To-HAUHYPWohLA",
+      authDomain: "samuelsharp.com",
+      databaseURL: "https://samuelprojecthub.firebaseio.com",
+      projectId: "samuelprojecthub",
+      storageBucket: "samuelprojecthub.appspot.com",
+      messagingSenderId: "169420726367",
+      appId: "1:169420726367:web:7348901dd581cd53f9bbea"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
+  <script type="text/javascript">
+    var uiConfig = {
+      signInSuccessUrl: 'index.html',
+      signInOptions: [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID
+      ]
+    };
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    ui.start('#firebaseui-auth-container', uiConfig);
+  </script>
+</head>
+
+<body>
+  <h1>Log in to your Samuel Account!</h1>
+  <div id="firebaseui-auth-container"></div>
+</body>
+
+</html>
